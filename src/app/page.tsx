@@ -1,7 +1,9 @@
+import Counter from "./components/Counter";
+
 const HomePage = () => {
   return (
     <div>
-      <h1 className="text-4xl font-bold text-center">Home Page</h1>
+      <Counter />
     </div>
   );
 };
