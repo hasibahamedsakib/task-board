@@ -2,11 +2,17 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const baseApi = createApi({
   reducerPath: "baseApi",
-  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:5000/api" }),
+  baseQuery: fetchBaseQuery({
+    baseUrl: "https://simple-rest-api.vercel.app/api",
+  }),
   tagTypes: ["Tasks"],
   endpoints: (builder) => ({
     getTasks: builder.query({
-      query: () => `/todos`,
+      query: ({priority, status}) => ({
+        url: `/todos`,
+        method: "GET",
+        params: { priority, status },
+      }),
       providesTags: ["Tasks"],
     }),
     addTask: builder.mutation({

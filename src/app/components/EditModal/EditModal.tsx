@@ -84,7 +84,7 @@ const EditModal = ({
             <div className="space-y-2">
               <label className="text-sm font-medium">Name of Task</label>
               <input
-                {...register("name")}
+                {...register("name", { required: true })}
                 className="bg-transparent flex h-10 w-full rounded-md border px-3"
                 placeholder="Enter your name"
               />
@@ -92,7 +92,7 @@ const EditModal = ({
             <div className="space-y-2">
               <label className="text-sm font-medium">Priority</label>
               <select
-                {...register("priority")}
+                {...register("priority", { required: true })}
                 className="bg-transparent flex h-10 w-full rounded-md border px-3"
               >
                 <option value="">Select priority</option>
@@ -104,7 +104,7 @@ const EditModal = ({
             <div className="space-y-2">
               <label className="text-sm font-medium">Status</label>
               <select
-                {...register("status")}
+                {...register("status", { required: true })}
                 className="bg-transparent flex h-10 w-full rounded-md border px-3"
               >
                 <option value="">Select status</option>
@@ -113,7 +113,7 @@ const EditModal = ({
               </select>
             </div>
             <button className="w-full bg-primary text-white p-2 rounded hover:bg-black transition-all duration-300">
-              {currentTask ? "Edit Task" : "Add Task"}
+             Edit Task
             </button>
           </form>
         </div>

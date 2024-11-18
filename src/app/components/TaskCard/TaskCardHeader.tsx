@@ -3,8 +3,8 @@ import { BiCheckbox } from "react-icons/bi";
 
 const TaskCardHeader = ({ children }: { children: ReactNode }) => {
   return (
-    <div className="overflow-x-auto ">
-      <table className=" shadow-md w-full border mx-auto border-gray-100  my-6">
+    <div className="overflow-x-auto overflow-y-auto">
+      <table className="shadow-md w-full border mx-auto border-gray-100 my-3 md:my-6">
         <thead>
           <tr className="bg-primary text-white">
             <th className="py-3 px-6  border-b text-end">

@@ -33,7 +33,7 @@ const TaskCard = ({
   };
   return (
     <>
-      <tr className="hover:bg-gray-50 transition duration-300">
+      <tr className={`hover:bg-gray-50 transition duration-300 `}>
         <td className="py-4 px-6 border-b">
           <input
             onChange={handleCheckboxChange}
@@ -43,18 +43,28 @@ const TaskCard = ({
             className="flex h-5 w-5 items-center rounded-full  border-2 border-primary bg-primary text-white focus:border-primary focus:ring-primary"
           />
         </td>
-        <td className="py-4 px-6 border-b">{name}</td>
-        <td className="py-4 px-6 border-b">{priority}</td>
-        <td className="py-4 px-6 border-b">{status}</td>
+        <td
+          className={`py-4 px-6 border-b font-medium text-primary capitalize ${
+            status === "completed" && "line-through text-red-500"
+          }`}
+        >
+          {name}
+        </td>
+        <td className="py-4 px-6 border-b font-medium text-primary capitalize">
+          {priority}
+        </td>
+        <td className="py-4 px-6 border-b font-medium text-primary capitalize">
+          {status}
+        </td>
         <td className="py-4 px-6 border-b text-right">
           <FaEdit
-            className="text-2xl cursor-pointer"
+            className="text-xl cursor-pointer text-primary "
             onClick={handleEditTask}
           />
         </td>
         <td className="py-4 px-6 border-b text-right">
           <FaTrash
-            className="text-2xl cursor-pointer"
+            className=" text-primary text-xl cursor-pointer hover:text-red-500 transition-all duration-300"
             onClick={handleDeleteTask}
           />
         </td>

@@ -78,7 +78,7 @@ const Sidebar = () => {
                 alt="avatar"
               />
               <h4 className="mx-2 mt-2 text-xl font-medium text-gray-800  hover:underline">
-                User Name
+                User
               </h4>
             </div>
           </div>

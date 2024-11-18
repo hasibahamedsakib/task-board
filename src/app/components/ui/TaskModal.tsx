@@ -37,9 +37,9 @@ const TaskModal = () => {
       {/* Pay Button */}
       <button
         onClick={() => setOpenModal(true)}
-        className="border-2 border-black text-black p-2 rounded flex items-center justify-center gap-2"
+        className="border-2 border-black text-black p-1 sm:p-2 rounded flex items-center justify-center gap-1 sm:gap-2 text-sm sm:text-base"
       >
-        <IoIosAddCircleOutline className="text-lg" />
+        <IoIosAddCircleOutline className="text-base md:text-lg" />
         Add Task
       </button>
       <div

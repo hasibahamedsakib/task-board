@@ -2,10 +2,14 @@
 
 import React, { useEffect, useRef, useState } from "react";
 
-const Status = ({ setStatus }: { setStatus: (priority: string) => void }) => {
+const Priority = ({
+  setPriority,
+}: {
+  setPriority: (priority: string) => void;
+}) => {
   const [open, setOpen] = useState(false);
   const dropDownRef = useRef(null);
-  const items = ["pending", "completed"];
+  const items = ["high", "medium", "low"];
 
   useEffect(() => {
     const close = (e: MouseEvent) => {
@@ -24,24 +28,24 @@ const Status = ({ setStatus }: { setStatus: (priority: string) => void }) => {
     <div ref={dropDownRef} className="relative mx-auto w-fit ">
       <button
         onClick={() => setOpen((prev) => !prev)}
-        className=" border-2 border-primary px-2 py-1 md:px-6 sm:py-2 text-sm sm:text-base  rounded"
+        className=" border-2 border-primary px-2 py-1 md:px-6 sm:py-2 text-sm sm:text-base rounded"
       >
-        Status
+        Priority
       </button>
       <ul
         className={`${
           open ? "visible" : "invisible"
-        } absolute top-12 right-10 xl:right-0 z-50 w-full space-y-1 bg-white`}
+        } absolute top-12 z-50 w-full space-y-1 bg-white`}
       >
         {items.map((item, idx) => (
           <li
             key={idx}
-            className={`rounded-sm border-2 border-primary px-1 2xl:px-4 py-1 ${
+            className={`rounded-sm border-2 border-primary px-4 py-1 ${
               open ? "opacity-100 duration-500" : "opacity-0 duration-150"
-            } bg-white`}
+            } bg-white capitalize`}
             style={{ transform: `translateY(${open ? 0 : (idx + 1) * 10}px)` }}
           >
-            <button onClick={()=> setStatus(item)}>{item}</button>
+            <button onClick={() => setPriority(item)}>{item}</button>
           </li>
         ))}
       </ul>
@@ -49,4 +53,4 @@ const Status = ({ setStatus }: { setStatus: (priority: string) => void }) => {
   );
 };
 
-export default Status;
+export default Priority;
