@@ -43,7 +43,6 @@ const EditModal = ({
   }, [openModal]);
 
   const handleEditTask = async (data: Partial<Task>) => {
-    console.log(data);
     const updatedTask = {
       id: currentTask?.todoId,
       updatedTask: data,
@@ -113,7 +112,7 @@ const EditModal = ({
               </select>
             </div>
             <button className="w-full bg-primary text-white p-2 rounded hover:bg-black transition-all duration-300">
-             Edit Task
+              Edit Task
             </button>
           </form>
         </div>

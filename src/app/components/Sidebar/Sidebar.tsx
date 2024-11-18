@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { AiOutlineBars, AiOutlineLogout } from "react-icons/ai";
+import { AiOutlineBars } from "react-icons/ai";
 import { FaUsers } from "react-icons/fa";
 import { FcHome, FcReading } from "react-icons/fc";
 
@@ -20,11 +20,6 @@ const Sidebar = () => {
       icon: <IoIosStarOutline className="w-5 h-5" />,
     },
     { name: "Planned", href: "/", icon: <FaUsers className="w-5 h-5" /> },
-    {
-      name: "Assigned To Me",
-      href: "/",
-      icon: <FaUsers className="w-5 h-5" />,
-    },
   ];
   return (
     <>
@@ -111,11 +106,6 @@ const Sidebar = () => {
 
             <span className="mx-4 font-medium">Home</span>
           </Link>
-          <button className="flex w-full items-center px-4 py-2 mt-5 text-gray-600 hover:bg-gray-300  hover:text-gray-700 transition-colors duration-300 transform group-hover:text-gray-700">
-            <AiOutlineLogout className="w-6 h-6 " />
-
-            <span className="mx-4 font-medium ">Logout</span>
-          </button>
         </div>
       </div>
     </>
