@@ -3,9 +3,8 @@ import { useState } from "react";
 import { AiOutlineBars } from "react-icons/ai";
 import { FaUsers } from "react-icons/fa";
 import { FcHome, FcReading } from "react-icons/fc";
-
-import Logo from "../../assets/logo.png";
-import userAvatar from "../../assets/avatar.png";
+import Logo from "/public/assets/logo.png";
+import userAvatar from "/public/assets/avatar.png";
 import Image from "next/image";
 import Link from "next/link";
 import { IoIosStarOutline } from "react-icons/io";

@@ -9,8 +9,10 @@ import { Task } from "@/app/types/types";
 import Loader from "../ui/Loader";
 import { Toaster } from "sonner";
 import Image from "next/image";
-import Logo from "../../assets/logo.png";
+import Logo from "/public/assets/logo.png";
+
 import Priority from "../ui/Priority";
+
 const MyDay = () => {
   const [priority, setPriority] = useState("");
   const [status, setStatus] = useState("");
@@ -41,7 +43,11 @@ const MyDay = () => {
           {/* {tasks?.result?.map((task: Task) => (
             <TaskCard key={task.todoId} task={task} />
           ))} */}
-
+          {tasks?.result?.length === 0 && (
+            <h1 className=" text-base md:text-xl font-semibold p-2 text-red">
+              No tasks found
+            </h1>
+          )}
           {tasks?.result
             ?.filter((task: Task) => task.status === "pending")
             .map((task: Task) => (
