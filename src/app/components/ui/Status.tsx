@@ -21,27 +21,27 @@ const Status = () => {
   }, []);
 
   return (
-    <div ref={dropDownRef} className="relative mx-auto w-fit text-white">
+    <div ref={dropDownRef} className="relative mx-auto w-fit ">
       <button
         onClick={() => setOpen((prev) => !prev)}
-        className="rounded-sm bg-sky-600 px-6 py-2"
+        className=" border-2 border-primary px-6 py-2 rounded"
       >
-        Status
+        Priority
       </button>
       <ul
         className={`${
           open ? "visible" : "invisible"
-        } absolute top-12 z-50 w-full space-y-1`}
+        } absolute top-12 z-50 w-full space-y-1 bg-white`}
       >
         {items.map((item, idx) => (
           <li
             key={idx}
-            className={`rounded-sm bg-sky-400 p-2 ${
+            className={`rounded-sm border-2 border-primary px-4 py-1 ${
               open ? "opacity-100 duration-500" : "opacity-0 duration-150"
-            } hover:bg-sky-500`}
+            } bg-white`}
             style={{ transform: `translateY(${open ? 0 : (idx + 1) * 10}px)` }}
           >
-            {item}
+            <button>{item}</button>
           </li>
         ))}
       </ul>
